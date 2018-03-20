@@ -16,9 +16,24 @@ public class Author {
     private String firstName;
     private String lastName;
 
+    public Author(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     //target site - authors is the hash set defined in book class
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
+    }
+
+
 
     public String getFirstName() {
         return firstName;
@@ -47,5 +62,8 @@ public class Author {
     }
 
 
+    public Author() {
+
+    }
 
 }
